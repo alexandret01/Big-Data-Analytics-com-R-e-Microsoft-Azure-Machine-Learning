@@ -23,5 +23,32 @@ lista1
 
 # Exercício 4 - Usando a função read.table() leia o arquivo do link abaixo para uma dataframe
 # http://data.princeton.edu/wws509/datasets/effort.dat
-dataframe1 = data.frame(read.csv("exer.csv"))
-dataframe1
+df <- data.frame(read.table("http://data.princeton.edu/wws509/datasets/effort.dat"))
+class(df)
+df
+View(df)
+
+# Exercício 5 - Transforme o dataframe anterior, em um dataframe nomeado com os seguintes labels:
+# c("config", "esfc", "chang")
+names(df) = c("config", "esfc", "chang")
+names(df) = c("Col1", "Col2", "Col3")
+df
+
+# Exercício 6 - Imprima na tela o dataframe iris, 
+# verifique quantas dimensões existem no dataframe iris, imprima um resumo do dataset
+iris
+class(iris)
+dim(iris)
+summary(iris)
+str(iris)
+View(iris)
+
+# Exercício 7 - Crie um plot simples usando as duas primeiras colunas do dataframe iris
+plot(iris$Sepal.Length, iris$Sepal.Width)
+
+# Exercício 8 - Usando s função subset, crie um novo dataframe com o conjunto de dados do dataframe iris em que Sepal.Length > 7
+# Dica: consulte o help para aprender como usar a função subset()
+?subset
+iris1 <- subset(iris, Sepal.Length > 7)
+View(iris1)
+
